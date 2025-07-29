@@ -1,28 +1,35 @@
 # BuddyBoss Custom Plugin
 
-Here is the test i solved whit the build of a plugin for doing the creation of the field and building the diferen opcions of the test.
+This plugin was created as part of a test to demonstrate the ability to build custom functionality within the BuddyBoss platform.
 
-## Setup
-1. Install this plugin in your `wp-content/plugins/` directory.
-2. Make sure the BuddyBoss plugin is installed and activated.
+## 🚀 Setup
+
+1. Upload this plugin to the `wp-content/plugins/` directory.
+2. Make sure the [BuddyBoss Platform](https://www.buddyboss.com/resources/docs/platform/) plugin is installed and activated.
 3. Activate this plugin from the WordPress admin panel.
 
-## Features
+## ✅ Features
 
-- **Customizable field for the learning goal**  
-  Adds a custom "Learning Goal" field for members.
+### 🔹 Customizable Field: Learning Goal  
+Adds a custom **"Learning Goal"** field to member profiles using BuddyBoss profile fields.
 
-- **Shortcode `[learning_community_directory]` with filter**  
-  Displays a member directory with a filter by learning goal.
+### 🔹 `[learning_community_directory]` Shortcode  
+Displays a filterable member directory based on the selected learning goal.
 
-- **Shortcode for activity feed**  
-  Shows activity in the courses you are enrolled in.
+### 🔹 Course Activity Feed Shortcode  
+Shows recent activity updates from courses the user is enrolled in.
 
-- **Join course button**  
-  Allows users to join a course if they are not already enrolled.
+### 🔹 "Join Course" Button  
+Displays a button for users to join a course if they are not already enrolled.
 
-- **Members-only content access**  
-  Restricts certain content to registered members only.
+### 🔹 Members-Only Content Restriction  
+Restricts access to selected pages (e.g. “Member Resources”) to logged-in users with specific roles (Subscriber or higher).
 
-- **Custom login redirect message**  
-  Displays a custom message after login and redirects the user.
+### 🔹 Custom Login Redirect Message  
+Displays a **custom warning message** on the login form when users are redirected from a protected page, such as:
+
+> ⚠️ *Please log in to access member-only resources.*
+
+---
+
+## 📁 File Structure
