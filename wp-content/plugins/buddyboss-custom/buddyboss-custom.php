@@ -204,7 +204,7 @@ add_shortcode('group_activity_feed', 'bb_custom_group_activity_feed_shortcode');
 function restrict_member_resources_access() {
     if (is_page('member-resources')) {
         if (!is_user_logged_in()) {
-            wp_redirect(wp_login_url(get_permalink() . '?redirected=true'));
+            wp_redirect(wp_login_url() . '?redirected=true');
             exit;
         }
 
@@ -220,17 +220,19 @@ function restrict_member_resources_access() {
         }
 
         if (!$has_access) {
-            wp_redirect(wp_login_url(get_permalink() . '?redirected=true'));
+            wp_redirect(wp_login_url() . '?redirected=true');
             exit;
         }
     }
 }
-add_action('login_form', 'show_custom_login_notice_fixed');
+add_action('template_redirect', 'restrict_member_resources_access');
 
-function show_custom_login_notice_fixed() {
+// Show message on login form if redirected
+add_action('login_form', 'show_custom_login_notice');
+function show_custom_login_notice() {
     if (isset($_GET['redirected']) && $_GET['redirected'] === 'true') {
-        echo '<div style="margin-bottom: 16px; padding: 12px; border: 2px solid #cc0000; background-color: #ffe3e3; color: #000; font-weight: bold; text-align: center;">
-            ⚠️ Please log in to access member-only resources.
+        echo '<div style="background:#ffe3e3; border:1px solid #cc0000; padding:10px; margin-bottom:15px; text-align:center;">
+           <strong> ⚠️ Please log in to access member-only resources. </strong>
         </div>';
     }
 }
